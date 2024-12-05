@@ -13,7 +13,10 @@ const app = express();
 app.use(cors({
   origin: "https://notes-frontend-gamma.vercel.app",
   credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 }));
+
 
 // Middleware
 app.use(express.json());
