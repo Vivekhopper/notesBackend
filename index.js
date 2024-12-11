@@ -8,9 +8,13 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({
-  origin:"https://notes-frontend-gamma.vercel.app/",
-}));
+app.use(
+  cors({
+    origin: "https://notes-frontend-gamma.vercel.app", // Correct origin without trailing slash
+    credentials: true, // Allow cookies and credentials if needed
+  })
+);
+
 app.use(express.json());
 
 mongooseCon();
