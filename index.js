@@ -8,7 +8,9 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin:"https://notes-frontend-gamma.vercel.app/",
+}));
 app.use(express.json());
 
 mongooseCon();
